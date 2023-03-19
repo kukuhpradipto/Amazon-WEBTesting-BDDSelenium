@@ -13,8 +13,9 @@ public class Hooks {
     public void openBrowser(){
         ChromeOptions a = new ChromeOptions();
         WebDriverManager.chromedriver().setup();
+        a.addArguments("--remote-allow-origins=*");
         webDriver= new ChromeDriver(a);
-        String URL = "https://www.amazon.com/";
+        String URL = "https://www.amazon.com";
         webDriver.get(URL);
         webDriver.manage().window().maximize();
     }

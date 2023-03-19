@@ -7,6 +7,7 @@
       Then User click on menu PET on hamburger all menu
       When User click choose product : PetSafe Smart Feed
       Then User click button add to cart
+      Then User click button cart in pop pup side right
       When User click hamburger all menu
       And User click on menu Smart Home on Menu Item Hamburger
       Then User click on menu PET on hamburger all menu

@@ -39,7 +39,7 @@ public class PETpage {
         hamburgerListItem.click();
     }
     // The First Product
-    @FindBy(xpath = "//*[@id=\"acs-product-block-0\"]")
+    @FindBy(xpath = "//span[.='PetSafe Smart Feed Automatic Dog and…']")
     private WebElement firstProduct;
     public void setFirstProduct(){
         firstProduct.click();
@@ -51,7 +51,7 @@ public class PETpage {
         addToCart.click();
     }
     // The Second Product
-    @FindBy(xpath = "//ol[@class='a-carousel']//div[contains(.,'HD 1080p Pet Camera，Dog Camera 360° Pet Monitor Indoor Cat Camera with Night Vis')]")
+    @FindBy(xpath = "//span[.='HD 1080p Pet Camera，Dog Cam…']")
     private WebElement secondProduct;
     public void setSecondProduct(){
         secondProduct.click();
@@ -86,5 +86,12 @@ public class PETpage {
     public String setErrorMessage(){
         return errorMessage.getText();
     }
+
+    @FindBy(xpath = "//span[@id='attach-sidesheet-view-cart-button']//input[@class='a-button-input']")
+    private WebElement popUPSideBar;
+    public void setPopUPSideBar(){
+        popUPSideBar.click();
+    }
+
 }
 

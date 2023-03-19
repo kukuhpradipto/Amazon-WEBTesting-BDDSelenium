@@ -34,9 +34,10 @@ public class PETStepdefs {
 
     @And("User click on menu Smart Home on Menu Item Hamburger")
     public void userClickOnMenuSmartHomeOnMenuItemHamburger() throws InterruptedException {
-        PETpage petPage = new PETpage(webDriver);
-        petPage.setHamburgerMenuItem();
-        Thread.sleep(2000);
+        WebElement a;
+        a = new WebDriverWait(webDriver,5).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[.='Smart Home']")));
+        a.click();
+        Thread.sleep(5000);
     }
 
     @Then("User click on menu PET on hamburger all menu")
@@ -50,14 +51,14 @@ public class PETStepdefs {
     public void userClickChooseProductPetSafeSmartFeed() throws InterruptedException {
         PETpage petPage = new PETpage(webDriver);
         petPage.setFirstProduct();
-        Thread.sleep(4000);
+        Thread.sleep(5000);
     }
 
     @Then("User click button add to cart")
     public void userClickButtonAddToCart() throws InterruptedException {
         PETpage petPage = new PETpage(webDriver);
         petPage.setAddToCart();
-        Thread.sleep(2000);
+        Thread.sleep(7000);
     }
 
     @When("User click choose product : HD 1080p Pet Camera")
@@ -107,5 +108,12 @@ public class PETStepdefs {
         PETpage petPage = new PETpage(webDriver);
         Assert.assertEquals(error, petPage.setErrorMessage());
         Thread.sleep(2000);
+    }
+
+    @Then("^User click button cart in pop pup side right$")
+    public void userClickButtonCartInPopPupSideRight() throws InterruptedException {
+        PETpage petPage = new PETpage(webDriver);
+        petPage.setPopUPSideBar();
+        Thread.sleep(7000);
     }
 }
